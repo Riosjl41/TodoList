@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 10rem;
+    margin-top: 5rem;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.addItem {
+    display: flex; 
+    justify-content: center;
+    margin-top: 10rem;
+}
