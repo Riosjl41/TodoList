@@ -1,12 +1,11 @@
 let btn = document.querySelector('button');
-let list = document.getElementById('ul');
-
+let list = document.querySelector('ul');
 
 
 function getVal(){
     let item = document.querySelector('input').value;
-    //console.log(item);
-    let newLi=document.createElement('LI');
+    let newLi=document.createElement('li');
+    newLi.textContent=item;
     list.appendChild(newLi);
 }
 
