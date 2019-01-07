@@ -6,19 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
 </head>
 <body>
     <header> 
-        <h1>Todo List</h1>
+        <h1 class='display-1 text-info'>Todo List</h1>
     </header>
     <main>
-            <div class="addItem">
-                    <input type='text' placeholder="Todo Item">
-                    <button type='button'>Add Item</button>
-            </div>
-            <ul>
+            <div class="addItem input-group mb-3 container">
+                <input type="text" class="form-control" placeholder="Todo Item" aria-label="Todo Item" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add Item</button>
+                </div>
+              </div>
+              <div class="container">
+                <ul class='list-group'>
                 
-            </ul>
+                </ul>
+              </div>
+            
     </main>
     <script src='script.js'></script>
 </body>
