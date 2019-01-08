@@ -16,20 +16,20 @@ function addItem(){
     newLi.textContent=item;
     //clear input field
     input.value='';
-    //create check button
-    let chkBtn = document.createElement('button');
     //create delete button
     let delBtn = document.createElement('button');
-    //set strikethrough class for check button
-    chkBtn.setAttribute('class', 'btn-outline-success btn-sm')
+     //create check button
+     let chkBtn = document.createElement('button');
     //set delete class for delete button
-    delBtn.setAttribute('class','del btn-outline-danger btn-sm');
+    delBtn.setAttribute('class','del btn-outline-danger btn-sm float-right ml-1');
+     //set strikethrough class for check button
+    chkBtn.setAttribute('class', 'btn-outline-success btn-sm float-right');
     //add text to buttons
     chkBtn.innerHTML=' &#10003;';
     delBtn.innerHTML='X';
     //add buttons to list item
-    newLi.appendChild(chkBtn);
     newLi.appendChild(delBtn);
+    newLi.appendChild(chkBtn);
     //add list item to list
     list.appendChild(newLi);
 
@@ -41,13 +41,13 @@ btnEnter.addEventListener('click', addItem);
 //handle click event for when delete button is clicked 
 list.addEventListener('click', function(e){
         //check that the button is being clicked
-        if(e.target.className=='del btn-outline-danger btn-sm'){
+        if(e.target.className=='del btn-outline-danger btn-sm float-right ml-1'){
             const delLi=e.target.parentElement;
             list.removeChild(delLi);
         }
-        if(e.target.className=='btn-outline-success btn-sm'){
+        else if(e.target.className=='btn-outline-success btn-sm float-right'){
             const chkLi=e.target.parentElement;
-            chkLi.setAttribute('class','list-group-item chk');
+            chkLi.classList.toggle('chk');
         }
 })
 

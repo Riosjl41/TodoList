@@ -1,4 +1,3 @@
-
 *{
     padding: 0;
     margin: 0;
@@ -26,5 +25,5 @@ button {
 
 
 .chk{
-    text-decoration: line-through;
+    text-decoration: line-through !important;
 }
