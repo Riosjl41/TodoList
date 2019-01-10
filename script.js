@@ -35,9 +35,19 @@ function addItem(){
 
 }
 
-//runs function to add new item for when enter button is clicked
+//runs function to add new item for when "add" button is clicked
 btnEnter.addEventListener('click', addItem);
-   
+
+//runs function to add new item for when "Enter" key is clicked on keyboard
+input.addEventListener("keyup", function(e) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      // Trigger function
+      addItem();
+    }
+});
+
 //handle click event for when delete button is clicked 
 list.addEventListener('click', function(e){
         //check that the button is being clicked
@@ -50,5 +60,7 @@ list.addEventListener('click', function(e){
             chkLi.classList.toggle('chk');
         }
 })
+
+
 
 
