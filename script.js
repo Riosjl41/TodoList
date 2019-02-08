@@ -25,8 +25,8 @@ function addItem(){
      //set strikethrough class for check button
     chkBtn.setAttribute('class', 'btn-outline-success btn-sm float-right');
     //add text to buttons
-    chkBtn.innerHTML=' &#10003;';
-    delBtn.innerHTML='X';
+    chkBtn.innerHTML='Complete';
+    delBtn.innerHTML='Delete';
     //add buttons to list item
     newLi.appendChild(delBtn);
     newLi.appendChild(chkBtn);
