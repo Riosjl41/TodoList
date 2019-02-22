@@ -7,6 +7,8 @@ let input = document.querySelector('input');
 
 //function to add item to list
 function addItem(){
+    //check to see that input isn't empty
+    if(input.value!== ''){
     //create new list item
     let newLi=document.createElement('li');
     newLi.setAttribute('class','list-group-item');
@@ -32,7 +34,7 @@ function addItem(){
     newLi.appendChild(chkBtn);
     //add list item to list
     list.appendChild(newLi);
-
+    }
 }
 
 //runs function to add new item for when "add" button is clicked
