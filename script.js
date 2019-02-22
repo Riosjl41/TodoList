@@ -1,12 +1,14 @@
 //create selectors
-let btnEnter = document.querySelector('button');
+let btnEnter = document.querySelector('#button-addon2');
 let list = document.querySelector('ul');
 list.setAttribute('class','list-group list-group');
 let input = document.querySelector('input');
 
 
 //function to add item to list
-function addItem(){
+function addItem(e){
+    //prevent submitting of form
+    e.preventDefault();
     //check to see that input isn't empty
     if(input.value!== ''){
     //create new list item
