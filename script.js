@@ -38,8 +38,8 @@ function addItem(e){
      //set strikethrough class for check button
     chkBtn.setAttribute('class', 'btn-outline-success btn-sm float-right');
     //add text to buttons
-    chkBtn.innerHTML='Complete';
-    delBtn.innerHTML='Delete';
+    chkBtn.innerHTML=`<i class="fa fa-check"></i>`;
+    delBtn.innerHTML=`<i class="fa fa-remove"></i>`;
     //add buttons to list item
     newLi.appendChild(delBtn);
     newLi.appendChild(chkBtn);
@@ -82,8 +82,8 @@ function getItems(){
       //set strikethrough class for check button
      chkBtn.setAttribute('class', 'btn-outline-success btn-sm float-right');
      //add text to buttons
-     chkBtn.innerHTML='Complete';
-     delBtn.innerHTML='Delete';
+     chkBtn.innerHTML=`<i class="fa fa-check"></i>`;
+     delBtn.innerHTML=`<i class="fa fa-remove"></i>`;
      //add buttons to list item
      newLi.appendChild(delBtn);
      newLi.appendChild(chkBtn);
@@ -125,12 +125,32 @@ list.addEventListener('click', function(e){
         if(e.target.classList.contains('del')){
             const delLi=e.target.parentElement;
             list.removeChild(delLi);
+
+            //Delete item from local storage
+            delStorage(delLi);
         }
         else if(e.target.classList.contains('btn-outline-success')){
             const chkLi=e.target.parentElement;
             chkLi.classList.toggle('chk');
         }
 })
+
+//remove item from local storage
+function delStorage(listItem){
+    let items;
+    if(localStorage.getItem('items') === null){
+        items= [];
+    }
+    else{
+        items = JSON.parse(localStorage.getItem('items'));
+    }
+
+    items.forEach(function(item, index){
+       console.log(listItem.textContent);
+    });
+
+    localStorage.setItem('items', JSON.stringify(items));
+}
 
 //function to clear list
 function clrItems (e){
