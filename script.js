@@ -122,7 +122,7 @@ input.addEventListener("keyup", function(e) {
 //handle click event for when delete/check button is clicked 
 list.addEventListener('click', function(e){
         //check that the button is being clicked
-        if(e.target.classList.contains('del')){
+        if((e.target.classList.contains('del'))||e.target.ch){
             const delLi=e.target.parentElement;
             list.removeChild(delLi);
 
@@ -146,7 +146,9 @@ function delStorage(listItem){
     }
 
     items.forEach(function(item, index){
-       console.log(listItem.textContent);
+       if(listItem.textContent === item){
+           items.splice(index, 1);
+       }
     });
 
     localStorage.setItem('items', JSON.stringify(items));
@@ -157,6 +159,8 @@ function clrItems (e){
     e.preventDefault();
     //Clear out ul 
     list.innerHTML='';
+    //clear local storage
+    localStorage.clear();
 }
 
 

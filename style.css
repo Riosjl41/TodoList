@@ -1,10 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-}
-
-body{
-    background-color: #123b56;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -24,6 +21,11 @@ label {
 button {
     margin-left: 10px;
     cursor: pointer;
+
+}
+
+i{
+    pointer-events:none;
 }
 
 .addItem {
