@@ -48,14 +48,14 @@ input.addEventListener("keyup", function(e) {
     }
 });
 
-//handle click event for when delete button is clicked 
+//handle click event for when delete/check button is clicked 
 list.addEventListener('click', function(e){
         //check that the button is being clicked
-        if(e.target.className=='del btn-outline-danger btn-sm float-right ml-1'){
+        if(e.target.classList.contains('del')){
             const delLi=e.target.parentElement;
             list.removeChild(delLi);
         }
-        else if(e.target.className=='btn-outline-success btn-sm float-right'){
+        else if(e.target.classList.contains('btn-outline-success')){
             const chkLi=e.target.parentElement;
             chkLi.classList.toggle('chk');
         }
